@@ -1,3 +1,30 @@
+gcp_key.json
+# Ignore .terraform directory
+**/.terraform/*
+.terraform.lock.hcl
+
+# Ignore any terraform.tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore crash.log
+crash.log
+
+# Ignore .tfvars files
+*.tfvars
+
+# Ignore override files as they are usually used to override resources on a per-environment basis.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore .terraformrc
+.terraformrc
+
+# Ignore terraform.rc
+terraform.rc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

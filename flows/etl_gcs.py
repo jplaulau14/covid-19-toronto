@@ -111,6 +111,7 @@ def load_to_bq(df: pd.DataFrame):
 def main_flow():
     df = extract()
     df = transform(df)
+    df = rename_columns(df)
     df = convert_to_parquet(df)
     path = load_local(df)
     load_to_gcs(path)

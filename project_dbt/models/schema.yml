@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: stg_cases
+    description: Staging model for case-related information
+    columns:
+      - name: id
+        description: Unique row identifier for Open Data database
+        tests:
+          - unique
+          - not_null
+      - name: assigned_id
+        description: A unique ID assigned to cases by Toronto Public Health for the purposes of posting to Open Data
+      - name: outbreak_associated
+        description: Indicates if the case is associated with outbreaks of COVID-19 in Toronto healthcare institutions and healthcare settings
+      - name: source_of_infection
+        description: Source of infection for the case
+      - name: classification
+        description: Categorization of the case as confirmed or probable according to the provincial case definition
+      - name: episode_date
+        description: Best estimated date when the disease was acquired
+      - name: reported_date
+        description: Date the case was reported to Toronto Public Health
+      - name: outcome
+        description: Outcome of the case - Fatal, Resolved, or Active
+      - name: ever_hospitalized
+        description: Indicates if the case was ever hospitalized
+      - name: ever_in_icu
+        description: Indicates if the case was ever in ICU
+      - name: ever_intubated
+        description: Indicates if the case was ever intubated
+
+  - name: stg_demographics
+    description: Staging model for demographic information
+    columns:
+      - name: id
+        description: Unique row identifier for Open Data database
+        tests:
+          - unique
+          - not_null
+      - name: age_group
+        description: Age group of the individual at the time of illness
+      - name: client_gender
+        description: Gender of the individual
+
+  - name: stg_locations
+    description: Staging model for location-related information
+    columns:
+      - name: id
+        description: Unique row identifier for Open Data database
+        tests:
+          - unique
+          - not_null
+      - name: neighbourhood_name
+        description: Name of the neighborhood in Toronto where the individual resides
+      - name: fsa
+        description: Forward sortation area (i.e. first three characters of postal code) based on the case's primary home address

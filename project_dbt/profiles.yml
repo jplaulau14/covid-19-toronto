@@ -1,0 +1,13 @@
+covid19_toronto: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/pats/Desktop/covid-19-toronto/gcp_key.json # replace this with the full path to your keyfile
+      project: covid-19-toronto # Replace this with your project id
+      dataset: covid19_toronto_dbt # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 4
+      timeout_seconds: 300
+      location: us-central1
+      priority: interactive
